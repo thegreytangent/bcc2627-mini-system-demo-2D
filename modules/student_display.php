@@ -17,15 +17,17 @@
                          </tr>
                      </thead>
                      <tbody>
+                        <?php foreach (StudentRepository::all() as $student) : ?>
                          <tr>
-                             <th scope="row">1</th>
-                             <td>Mark</td>
-                             <td>Otto</td>
+                             <th scope="row"><?php echo $student['student_number']?></th>
+                             <td><?php echo $student['lastname'] .", ". $student['firstname']?></td>
+                             <td><?php echo $student['date_of_birth']?></td>
                              <td>
                                 <button class="btn btn-info">Edit</button>
                                   <button class="btn btn-danger">Delete</button>
                              </td>
                          </tr>
+                         <?php endforeach; ?>
                      </tbody>
                  </table>
              </div>

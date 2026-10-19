@@ -2,12 +2,12 @@
 
 interface IStudentRepository
 {
-    public function all(): array;
-    
-    public function find(string $id): array;
-    
-    public function update(array $student): array;
-    
-    public function delete(string $id): void;
-    
+    public static function all(): array;
+
+    public static function find(string $id): array;
+
+    public static function update(array $student): array;
+
+    public static function delete(string $id): void;
+
 }
