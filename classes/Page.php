@@ -10,9 +10,8 @@ public static function display(string $page) {
             include 'modules/grades_display.php';
             break;
             default:
-               include 'modules/dashboard.php';
-
-        }
+            include 'modules/dashboard.php';
+            }
 }   
 
 
