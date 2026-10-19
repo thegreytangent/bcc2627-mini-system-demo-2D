@@ -9,7 +9,8 @@ class Person {
     }
 
     public function getCompleteName(): string {
-        return $this->lastname . ', ' . $this->firstname;
-    }
+        return ucfirst($this->lastname) . ', ' . ucfirst($this->firstname);
+    } 
+    
     
 }

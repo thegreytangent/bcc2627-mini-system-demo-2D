@@ -15,6 +15,11 @@ class  Student extends Person {
         return $this->student_number;
     }
 
+    public function getDateOfBirth(): string {
+        return  date('F j, Y', strtotime($this->dob));
+    }
+
+
 
 
 }

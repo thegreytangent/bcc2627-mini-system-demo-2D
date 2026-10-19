@@ -19,9 +19,9 @@
                      <tbody>
                         <?php foreach (StudentRepository::all() as $student) : ?>
                          <tr>
-                             <th scope="row"><?php echo $student['student_number']?></th>
-                             <td><?php echo $student['lastname'] .", ". $student['firstname']?></td>
-                             <td><?php echo $student['date_of_birth']?></td>
+                             <th scope="row"><?php echo $student->getStudentNumber(); ?></th>
+                             <td><?php echo $student->getCompleteName(); ?></td>
+                             <td><?php echo $student->getDateOfBirth()?></td>
                              <td>
                                 <button class="btn btn-info">Edit</button>
                                   <button class="btn btn-danger">Delete</button>

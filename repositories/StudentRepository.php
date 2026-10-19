@@ -40,9 +40,18 @@ class StudentRepository extends DBRepository implements IStudentRepository {
                 'lastname' => 'Garcia',
                 'date_of_birth' => '2004-01-30'
             ]
-           
         ];
-        return $students ;
+        $result = [];
+         foreach ($students as $student) {
+            $result[] = new Student(
+                $student['id'],
+                $student['student_number'],
+                $student['firstname'],
+                $student['lastname'],
+                $student['date_of_birth']
+            );
+        } 
+         return  $result ;
       }
     
     public static function find(string $id): array {
