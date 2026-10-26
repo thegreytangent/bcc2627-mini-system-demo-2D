@@ -6,6 +6,9 @@ public static function display(string $page) {
          case 'students':
             include 'modules/student_display.php';
             break;
+            case 'student-add':
+            include 'modules/student_add.php';
+            break;
             case 'grades':
             include 'modules/grades_display.php';
             break;

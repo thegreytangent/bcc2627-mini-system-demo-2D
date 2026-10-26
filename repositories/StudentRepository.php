@@ -5,8 +5,8 @@ class StudentRepository extends DBRepository implements IStudentRepository {
      
     public static function all(): array {
         
-        $students = self::query("SELECT * FROM student WHERE student_number='2983798'");
-        
+        $students = self::query("SELECT * FROM student");
+
         $result = [];
          foreach ($students as $student) {
             $result[] = new Student(
@@ -17,6 +17,7 @@ class StudentRepository extends DBRepository implements IStudentRepository {
                 $student['dob']
             );
         } 
+       
          return  $result ;
       }
     
@@ -31,6 +32,13 @@ class StudentRepository extends DBRepository implements IStudentRepository {
     public static function delete(string $id): void {
        
     }
+
+     public static function create(array $s): void {
+        $sql = "INSERT INTO student (student_number, firstname, lastname, dob) ";
+        $sql .= "VALUES ('".$s['student_number']."', '".$s['firstname']."', ";
+        $sql .="'".$s['lastname']."', '".$s['dob']."')";
+        self::connection()->query($sql);
+     }
     
 
 }
