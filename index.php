@@ -1,3 +1,5 @@
+  <?php include 'config/config.php'; ?>
+
  <?php include 'classes/Page.php'; ?>
 
  <?php include 'classes/Person.php'; ?>

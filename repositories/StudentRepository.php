@@ -4,43 +4,9 @@ class StudentRepository extends DBRepository implements IStudentRepository {
 
      
     public static function all(): array {
-        $students = [
-            [
-                'id' => 1212,
-                'student_number' => "29374234897",
-                'firstname' => 'john',
-                'lastname' => 'doe',
-                'date_of_birth' => '1223-31-13'
-            ],
-            [
-                'id' => 1,
-                'student_number' => '2026-0001',
-                'firstname' => 'Juan',
-                'lastname' => 'Dela Cruz',
-                'date_of_birth' => '2005-03-15'
-            ],
-            [
-                'id' => 2,
-                'student_number' => '2026-0002',
-                'firstname' => 'Maria',
-                'lastname' => 'Santos',
-                'date_of_birth' => '2004-07-22'
-            ],
-            [
-                'id' => 3,
-                'student_number' => '2026-0003',
-                'firstname' => 'Pedro',
-                'lastname' => 'Reyes',
-                'date_of_birth' => '2005-11-08'
-            ],
-            [
-                'id' => 4,
-                'student_number' => '2026-0004',
-                'firstname' => 'Ana',
-                'lastname' => 'Garcia',
-                'date_of_birth' => '2004-01-30'
-            ]
-        ];
+        
+        $students = self::query("SELECT * FROM student WHERE student_number='2983798'");
+        
         $result = [];
          foreach ($students as $student) {
             $result[] = new Student(
@@ -48,7 +14,7 @@ class StudentRepository extends DBRepository implements IStudentRepository {
                 $student['student_number'],
                 $student['firstname'],
                 $student['lastname'],
-                $student['date_of_birth']
+                $student['dob']
             );
         } 
          return  $result ;
